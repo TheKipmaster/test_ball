@@ -14,6 +14,7 @@ class Ball : public Simulation
 public:
   // Constructors and member functions
   Ball() ;
+  Ball(double X, double Y) ;
   void step(double dt) ;
   void display() ;
   void setPosition(double x, double y) ;

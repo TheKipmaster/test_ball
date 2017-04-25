@@ -11,6 +11,11 @@ Ball::Ball()
 xmin(-1), xmax(1), ymin(-1), ymax(1)
 { }
 
+Ball::Ball(double X, double Y) {
+  x = X;
+  y = Y;
+}
+
 void Ball::step(double dt)
 {
   double xp = x + vx * dt ;
