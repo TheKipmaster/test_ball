@@ -4,7 +4,6 @@
  **/
 
 #include "ball.h"
-
 #include <iostream>
 
 Ball::Ball()
@@ -32,4 +31,13 @@ void Ball::step(double dt)
 void Ball::display()
 {
   std::cout<<x<<" "<<y<<std::endl ;
+}
+
+void Ball::setPosition(double X, double Y) {
+  x = X;
+  y = Y;
+}
+
+std::tuple<double, double> Ball::getPosition() {
+  return std::make_tuple(x, y);
 }

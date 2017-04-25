@@ -7,6 +7,7 @@
 #define __ball__
 
 #include "simulation.h"
+#include <tuple>
 
 class Ball : public Simulation
 {
@@ -15,6 +16,8 @@ public:
   Ball() ;
   void step(double dt) ;
   void display() ;
+  void setPosition(double x, double y) ;
+  std::tuple<double, double> getPosition() ;
 
 protected:
   // Data members

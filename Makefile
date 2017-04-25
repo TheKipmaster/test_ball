@@ -7,7 +7,7 @@ test-springmass : springmass.cpp test-springmass.cpp
 test-springmass-graphics : graphics.cpp springmass.cpp test-springmass-graphics.cpp
 
 CXX=g++
-#CXXFLAGS=-lglut -lGL
+CXXFLAGS=-lglut -lGL -std=c++11
 
 clean:
 	find . -name '*~' -delete
