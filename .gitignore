@@ -1,3 +1,6 @@
 *.o*
 /support*
 /b16-*
+test-ball
+*.txt
+*.png
