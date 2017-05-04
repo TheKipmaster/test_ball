@@ -59,8 +59,7 @@ double Mass::getEnergy(double gravity) const
 {
   double totalE=0, kineticE, potentialE;
 
-  /* INCOMPLETE: TYPE YOUR CODE HERE */
-
+  /* COMPLETE: TYPE YOUR CODE HERE */
   kineticE = ((mass * velocity.norm2())/2);
   potentialE = mass*gravity*position.y;
   totalE = potentialE + kineticE;
@@ -146,8 +145,15 @@ void SpringMass::display()
 double SpringMass::getEnergy() const
 {
   double energy = 0 ;
+/* COMPLETE: TYPE YOUR CODE HERE */
+  int i;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  for(i = 0; i < masses.size(); i++) {
+    energy += masses.at(i).getEnergy();
+  }
+  for(i = 0; i <springs.size(); i++) {
+    energy += springs.at(i).getEnergy();
+  }
 
   return energy ;
 }
@@ -160,5 +166,13 @@ void SpringMass::step(double dt)
 
 }
 
+/* COMPLETE: TYPE YOUR CODE HERE */
+int newMass(Mass mass) {
+  masses.push_back(mass);
+  return masses.size();
+}
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+void newSpring(double naturalLength, double damping, double stiffness int mass1ref, int mass2ref) {
+  Spring spring = Spring(masses.at(mass1ref), masses.at(mass2ref), naturalLength, stiffness, damping);
+  springs.push_back(spring);
+}

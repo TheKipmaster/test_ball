@@ -76,7 +76,7 @@ protected:
 class Spring
 {
 public:
-  Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiff, double damping = 0.01) ;
+  Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiffness, double damping = 0.01) ;
   Mass * getMass1() const ;
   Mass * getMass2() const ;
   Vector2 getForce() const ;
@@ -86,7 +86,7 @@ public:
 protected:
 /* COMPLETE: TYPE YOUR CODE HERE */
   Mass *mass1, *mass2;
-  double naturalLength, damping;
+  double naturalLength, damping, stiffness;
 
 } ;
 
@@ -102,8 +102,8 @@ public:
   void display() ;
   double getEnergy() const ;
 /* COMPLETE: TYPE YOUR CODE HERE */
-  SpringMass(Mass mass);
-  SpringMass(Spring spring, int mass1ref, int mass2ref);
+  int newMass(Mass mass);
+  void newSpring(double naturalLength, double damping, double stiffness, int mass1ref, int mass2ref);
 
 protected:
   double gravity ;
