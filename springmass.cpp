@@ -61,7 +61,7 @@ double Mass::getEnergy(double gravity) const
 
   /* COMPLETE: TYPE YOUR CODE HERE */
   kineticE = ((mass * velocity.norm2())/2);
-  potentialE = mass*gravity*position.y;
+  potentialE = mass*gravity*(position.y-getRadius());
   totalE = potentialE + kineticE;
 
   return totalE ;
