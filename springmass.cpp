@@ -57,11 +57,15 @@ double Mass::getMass() const
 
 double Mass::getEnergy(double gravity) const
 {
-  double energy = 0 ;
+  double totalE=0, kineticE, potentialE;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  /* INCOMPLETE: TYPE YOUR CODE HERE */
 
-  return energy ;
+  kineticE = ((mass * velocity.norm2())/2);
+  potentialE = mass*gravity*position.y;
+  totalE = potentialE + kineticE;
+
+  return totalE ;
 }
 
 void Mass::step(double dt)
@@ -158,5 +162,3 @@ void SpringMass::step(double dt)
 
 
 /* INCOMPLETE: TYPE YOUR CODE HERE */
-
-
