@@ -84,8 +84,9 @@ public:
   double getEnergy() const ;
 
 protected:
-
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+/* COMPLETE: TYPE YOUR CODE HERE */
+  Mass *mass1, *mass2;
+  double naturalLength, damping;
 
 } ;
 
@@ -100,18 +101,18 @@ public:
   void step(double dt) ;
   void display() ;
   double getEnergy() const ;
-
-
-/* INCOMPLETE: TYPE YOUR CODE HERE */
-
+/* COMPLETE: TYPE YOUR CODE HERE */
+  SpringMass(Mass mass);
+  SpringMass(Spring spring, int mass1ref, int mass2ref);
 
 protected:
   double gravity ;
-
-
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+/* COMPLETE: TYPE YOUR CODE HERE */
+  typedef std::vector<Mass> masses_t;
+  typedef std::vector<Spring> springs_t;
+  masses_t masses;
+  springs_t springs;
 
 } ;
 
 #endif /* defined(__springmass__) */
-
