@@ -69,7 +69,7 @@ double Mass::getEnergy(double gravity) const
 
 void Mass::step(double dt)
 {
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+/* COMPLETE: TYPE YOUR CODE HERE */
   double xp, yp, xv, yv;
   Vector2 a;
 
