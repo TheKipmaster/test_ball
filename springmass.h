@@ -86,7 +86,7 @@ public:
 protected:
 /* COMPLETE: TYPE YOUR CODE HERE */
   Mass *mass1, *mass2;
-  double naturalLength, damping, stiffness;
+  double naturalLength, stiffness, damping;
 
 } ;
 
