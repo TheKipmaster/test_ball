@@ -57,17 +57,33 @@ double Mass::getMass() const
 
 double Mass::getEnergy(double gravity) const
 {
-  double energy = 0 ;
+  double totalE=0, kineticE, potentialE;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  /* COMPLETE: TYPE YOUR CODE HERE */
+  kineticE = ((mass * velocity.norm2())/2);
+  potentialE = mass*gravity*(position.y-getRadius());
+  totalE = potentialE + kineticE;
 
-  return energy ;
+  return totalE ;
 }
 
 void Mass::step(double dt)
 {
+/* COMPLETE: TYPE YOUR CODE HERE */
+  double xp, yp, xv, yv;
+  Vector2 a;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  a = force/mass;
+  if (xmin + radius <= xp && xp <= xmax - radius) {
+    position.x = position.x + velocity.x*dt + (a.x*dt*dt)/2;
+  } else {
+    velocity.x = -velocity.x;
+  }
+  if (ymin + radius <= yp && yp <= ymax - radius) {
+    position.y = position.y + velocity.y*dt + (a.y*dt*dt)/2;
+  } else {
+    velocity.y = -velocity.y;
+  }
 
 }
 
@@ -92,9 +108,15 @@ Mass * Spring::getMass2() const
 
 Vector2 Spring::getForce() const
 {
-  Vector2 F ;
+  Vector2 F, distance, unit;
+/* COMPLETE: TYPE YOUR CODE HERE */
+  double currentLength, stretchV;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  distance = mass1->getPosition() - mass2->getPosition();
+  currentLength = distance.norm();
+  unit = distance/currentLength;
+  stretchV = dot( unit, (mass1->getVelocity()-mass2->getVelocity()) );
+  F = ((naturalLength - currentLength)*stiffness + stretchV) * damping * unit;
 
   return F ;
 }
@@ -132,18 +154,31 @@ SpringMass::SpringMass(double gravity)
 : gravity(gravity)
 { }
 
-void SpringMass::display()
-{
+void SpringMass::display() {
+/* COMPLETE: TYPE YOUR CODE HERE */
+  unsigned int i;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
-
+  for(i = 0; i < masses.size(); i++) {
+    std::cout << masses.at(i) << std::endl;
+  }
+  for(i = 0; i < springs.size(); i++ ) {
+    std::cout << springs.at(i) << std::endl;
+  }
+  std::cout << getEnergy() << std::endl;
 }
 
 double SpringMass::getEnergy() const
 {
   double energy = 0 ;
+/* COMPLETE: TYPE YOUR CODE HERE */
+  unsigned int i;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  for(i = 0; i < masses.size(); i++) {
+    energy += masses.at(i).getEnergy(gravity);
+  }
+  for(i = 0; i <springs.size(); i++) {
+    energy += springs.at(i).getEnergy();
+  }
 
   return energy ;
 }
@@ -151,12 +186,30 @@ double SpringMass::getEnergy() const
 void SpringMass::step(double dt)
 {
   Vector2 g(0,-gravity) ;
+/* COMPLETE: TYPE YOUR CODE HERE */
+  unsigned int i;
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
+  for(i = 0; i < masses.size(); i++) {
+    masses.at(i).setForce(g * masses.at(i).getMass());
+  }
 
+  for(i = 0; i < springs.size(); i++) {
+    springs.at(i).getMass1()->addForce(-1 * springs.at(i).getForce());
+    springs.at(i).getMass2()->addForce(+1 * springs.at(i).getForce());
+  }
+
+  for(i = 0; i < masses.size(); i++) {
+    masses.at(i).step(dt);
+  }
 }
 
+/* COMPLETE: TYPE YOUR CODE HERE */
+int SpringMass::newMass(Mass mass) {
+  masses.push_back(mass);
+  return masses.size();
+}
 
-/* INCOMPLETE: TYPE YOUR CODE HERE */
-
-
+void SpringMass::newSpring(double naturalLength, double damping, double stiffness, int mass1ref, int mass2ref) {
+  Spring spring(&masses.at(mass1ref), &masses.at(mass2ref), naturalLength, stiffness, damping);
+  springs.push_back(spring);
+}
