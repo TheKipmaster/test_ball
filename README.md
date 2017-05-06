@@ -91,4 +91,4 @@ Para compilar o programa, basta fazer uso do Makefile incluído nesse repositór
 (formatação alterada para facilitar leitura)
 
 *Gráfico correspondente:*
-![graph2](https://github.com/TheKipmaster/test_ball/blob/master/results1.png "Gráfico 2")
+![graph2](https://github.com/TheKipmaster/test_ball/blob/master/results2.png "Gráfico 2")
