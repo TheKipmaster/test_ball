@@ -75,12 +75,12 @@ void Mass::step(double dt)
 
   a = force/mass;
   if (xmin + radius <= xp && xp <= xmax - radius) {
-    xp = position.x + velocity.x*dt + (a.x*dt*dt)/2;
+    position.x = position.x + velocity.x*dt + (a.x*dt*dt)/2;
   } else {
     velocity.x = -velocity.x;
   }
   if (ymin + radius <= yp && yp <= ymax - radius) {
-    yp = position.y + velocity.y*dt + (a.y*dt*dt)/2;
+    position.y = position.y + velocity.y*dt + (a.y*dt*dt)/2;
   } else {
     velocity.y = -velocity.y;
   }
