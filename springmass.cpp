@@ -70,18 +70,19 @@ double Mass::getEnergy(double gravity) const
 void Mass::step(double dt)
 {
 /* COMPLETE: TYPE YOUR CODE HERE */
-  double xp, yp, xv, yv;
   Vector2 a;
-
   a = force/mass;
-  if (xmin + radius <= position.x && position.x <= xmax - radius) {
-    position.x = position.x + velocity.x*dt + (a.x*dt*dt)/2;
+  double xp = position.x + velocity.x*dt + (a.x*dt*dt)/2,
+         yp = position.y + velocity.y*dt + (a.y*dt*dt)/2;
+
+  if (xmin + radius <= xp && xp <= xmax - radius) {
+    position.x = xp;
     velocity.x = velocity.x + a.x*dt;
   } else {
     velocity.x = -velocity.x;
   }
-  if (ymin + radius <= position.y && position.y <= ymax - radius) {
-    position.y = position.y + velocity.y*dt + (a.y*dt*dt)/2;
+  if (ymin + radius <= yp && yp <= ymax - radius) {
+    position.y = yp;
     velocity.y = velocity.y + a.y*dt;
   } else {
     velocity.y = -velocity.y;
