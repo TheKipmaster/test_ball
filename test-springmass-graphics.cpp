@@ -47,12 +47,12 @@ int main(int argc, char** argv)
   glutInit(&argc,argv);
   SpringMassDrawable springmass;
 /* INCOMPLETE: TYPE YOUR CODE HERE */
-  const double dt = 1/10.0;
+  const double dt = 1/120.0;
   const double mass = 0.05 ;
   const double radius = 0.02 ;
   const double naturalLength = 0.95 ;
   const double damping = 0.01;
-  const double stiffness = 0.5;
+  const double stiffness = 0.75;
 
   Mass m1(Vector2(-.5,0), Vector2(), mass, radius) ;
   Mass m2(Vector2(+.5,0), Vector2(), mass, radius) ;

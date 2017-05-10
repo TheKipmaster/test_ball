@@ -74,13 +74,15 @@ void Mass::step(double dt)
   Vector2 a;
 
   a = force/mass;
-  if (xmin + radius <= xp && xp <= xmax - radius) {
+  if (xmin + radius <= position.x && position.x <= xmax - radius) {
     position.x = position.x + velocity.x*dt + (a.x*dt*dt)/2;
+    velocity.x = velocity.x + a.x*dt;
   } else {
     velocity.x = -velocity.x;
   }
-  if (ymin + radius <= yp && yp <= ymax - radius) {
+  if (ymin + radius <= position.y && position.y <= ymax - radius) {
     position.y = position.y + velocity.y*dt + (a.y*dt*dt)/2;
+    velocity.y = velocity.y + a.y*dt;
   } else {
     velocity.y = -velocity.y;
   }
@@ -116,7 +118,7 @@ Vector2 Spring::getForce() const
   currentLength = distance.norm();
   unit = distance/currentLength;
   stretchV = dot( unit, (mass1->getVelocity()-mass2->getVelocity()) );
-  F = ((naturalLength - currentLength)*stiffness + stretchV) * damping * unit;
+  F = ((naturalLength - currentLength)*stiffness + (stretchV * damping)) * unit;
 
   return F ;
 }
@@ -194,8 +196,8 @@ void SpringMass::step(double dt)
   }
 
   for(i = 0; i < springs.size(); i++) {
-    springs.at(i).getMass1()->addForce(-1 * springs.at(i).getForce());
-    springs.at(i).getMass2()->addForce(+1 * springs.at(i).getForce());
+    springs.at(i).getMass1()->addForce(+1 * springs.at(i).getForce());
+    springs.at(i).getMass2()->addForce(-1 * springs.at(i).getForce());
   }
 
   for(i = 0; i < masses.size(); i++) {
