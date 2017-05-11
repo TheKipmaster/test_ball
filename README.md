@@ -21,6 +21,9 @@ Esse repositório inclui um arquivo Makefile, afim de facilitar o processo de co
 6. ball.cpp
     * Implementação de métodos declarados em ball.h.
 
+**Diagrama de Classes**
+
+![graph0](https://github.com/TheKipmaster/test_ball/blob/master/Bouncing-Ball-UML.png "Bouncing-Ball-UML")
 
 **Resultados Esperados**
 
