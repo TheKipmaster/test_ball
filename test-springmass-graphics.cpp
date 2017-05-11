@@ -50,12 +50,12 @@ int main(int argc, char** argv)
   const double dt = 1/120.0;
   const double mass = 0.05 ;
   const double radius = 0.02 ;
-  const double naturalLength = 0.95 ;
+  const double naturalLength = 0.5 ;
   const double damping = 0.01;
   const double stiffness = 0.75;
 
-  Mass m1(Vector2(-.5,0), Vector2(), mass, radius) ;
-  Mass m2(Vector2(+.5,0), Vector2(), mass, radius) ;
+  Mass m1(Vector2(-0.5,0), Vector2(), mass, radius) ;
+  Mass m2(Vector2(+0.5,0), Vector2(), mass, radius) ;
   springmass.newMass(m1);
   springmass.newMass(m2);
   springmass.newSpring(naturalLength, damping, stiffness, 0, 1);

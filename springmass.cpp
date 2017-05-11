@@ -119,7 +119,7 @@ Vector2 Spring::getForce() const
   currentLength = distance.norm();
   unit = distance/currentLength;
   stretchV = dot( unit, (mass1->getVelocity()-mass2->getVelocity()) );
-  F = ((naturalLength - currentLength)*stiffness + (stretchV * damping)) * unit;
+  F = ((currentLength - naturalLength)*(-stiffness) - stretchV * damping) * unit;
 
   return F ;
 }
