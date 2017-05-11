@@ -54,7 +54,7 @@ int main(int argc, char** argv)
   const double damping = 0.01;
   const double stiffness = 0.75;
 
-  Mass m1(Vector2(-0.5,0), Vector2(), mass, radius) ;
+  Mass m1(Vector2(-0.5,0.5), Vector2(), mass, radius) ;
   Mass m2(Vector2(+0.5,0), Vector2(), mass, radius) ;
   springmass.newMass(m1);
   springmass.newMass(m2);

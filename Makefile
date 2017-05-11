@@ -18,7 +18,7 @@ springmass.o: springmass.cpp springmass.h
 	$(CXX) springmass.cpp $(CFLAGS)
 
 test-springmass: springmass.o test-springmass.cpp
-	$(CXX) test-springmass.cpp springmass.o $(LfLAGS) -o test-springmass
+	$(CXX) test-springmass.cpp springmass.o $(LFLAGS) -o test-springmass
 
 test-springmass-graphics: graphics.o springmass.o test-springmass-graphics.cpp
 	$(CXX) test-springmass-graphics.cpp $(OBJS2) $(LFLAGS) -o test-springmass-graphics
