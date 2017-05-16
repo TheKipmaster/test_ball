@@ -15,7 +15,7 @@ Esse repositório inclui um arquivo Makefile, afim de facilitar o processo de co
 3. test-ball.cpp
     * Contém função main().
 4. simulation.h
-    * Declaração da classe virtual herdadas pela classe ball.
+    * Declaração da classe virtual herdada pela classe ball.
 5. ball.h
     * Declaração de métodos e atributos de uma instância da classe ball.
 6. ball.cpp
@@ -70,7 +70,7 @@ Para compilar o programa, basta fazer uso do Makefile incluído nesse repositór
 3. test-springmass.cpp
     * Contém função main().
 4. simulation.h
-    * Declaração da classe virtual herdadas pela classe ball.
+    * Declaração da classe virtual herdada pela classe springmass.
 5. springmass.h
     * Declaração de métodos e atributos de uma instância das classes mass, spring e springmass.
 6. springmass.cpp
@@ -105,3 +105,48 @@ Para compilar o programa, basta fazer uso do Makefile incluído nesse repositór
 
 *Gráfico correspondente:*
 ![graph2](https://github.com/TheKipmaster/test_ball/blob/master/results2.png "Gráfico 2")
+
+# Graphics
+
+A mais nova versão do projeto agora inclui a implementação de ferramentas que permitem manipular a placa gráfica da máquina
+para produzir simulações em 2D em tempo real.
+
+Para esse fim, o projeto faz uso das bibliotecas gráficas Open GL e Glut, cujas documentações podem ser encontradas
+[aqui](https://www.opengl.org/ "Site Oficial da OpenGL"). Para um guia de instalação de Glut e OpenGL, visite
+[este site](http://www.prinmath.com/csci5229/misc/install.html "Guia de Instalação")
+
+Para compilar as versões dos programas que utilizam as bibliotecas gráficas, é necessário executar os seguintes comandos em
+ordem:
+
+1. c++ graphics.cpp -std=c++11 -lglut -lGL -lGLU -c
+
+2. c++ springmass.cpp -std=c++11 -lglut -lGL -lGLU -c
+
+3. c++ test-springmass-graphics.cpp springmass.o graphics.o -std=c++11 -lglut -lGL -lGLU -o test-springmass-graphics
+
+Para compilar test-ball-graphics, se faz necessária a mesma rotina, exceto trocando a palavra "springmass" por ball sempre que
+ela aparecer. Também pode-se fazer uso do Makefile presente no repositório, digitando simplesmente "make test-ball-graphics" ou
+"make test-springmass-graphics" no terminal.
+
+**Arquivos**
+
+1. Makefile
+    * Automatiza o processo de compilação.
+2. .gitignore
+    * Dita tudo que deve ser ignorado pelo git em uma cópia local desse repositório.
+3. test-springmass-graphics.cpp
+    * Contém função main() para a simulação do sistema massa-mola.
+4. test-ball-graphics
+    * Contém função main() para a simulação da bola.
+5. graphics.h
+    * Declaração de métodos e atributos de uma instância das classes Figure e Drawable.
+6. graphics.cpp
+    * Implementação de métodos declarados em graphics.h
+
+**Screen Shots**
+
+*test-ball-graphics*
+![graph3](https://github.com/TheKipmaster/test_ball/blob/master/ball-graphics.png "test-ball-graphics em ação")
+
+*test-springmass-graphics*
+![graph4](https://github.com/TheKipmaster/test_ball/blob/master/springmass-graphics.png "test-springmass-graphics em ação")
