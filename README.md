@@ -90,6 +90,10 @@ Para compilar essa versão do programa, basta compilar springmass.cpp como arqui
 6. springmass.cpp
     * Implementação de métodos declarados em springmass.h.
 
+**Diagrama de Classes**
+
+![graph2](https://github.com/TheKipmaster/test_ball/blob/master/Spring-Mass-UML.png "Spring-Mass-UML")
+
 **Resultados Esperados**
 
    m1x      m1y        m2x     m2y
@@ -118,7 +122,7 @@ Para compilar essa versão do programa, basta compilar springmass.cpp como arqui
 (formatação alterada para facilitar leitura)
 
 *Gráfico correspondente:*
-![graph2](https://github.com/TheKipmaster/test_ball/blob/master/results2.png "Gráfico 2")
+![graph3](https://github.com/TheKipmaster/test_ball/blob/master/results2.png "Gráfico 2")
 
 # Graphics
 
@@ -159,7 +163,7 @@ ela aparecer.
 **Screen Shots**
 
 *test-ball-graphics*
-![graph3](https://github.com/TheKipmaster/test_ball/blob/master/ball-graphics.png "test-ball-graphics em ação")
+![graph4](https://github.com/TheKipmaster/test_ball/blob/master/ball-graphics.png "test-ball-graphics em ação")
 
 *test-springmass-graphics*
-![graph4](https://github.com/TheKipmaster/test_ball/blob/master/springmass-graphics.png "test-springmass-graphics em ação")
+![graph5](https://github.com/TheKipmaster/test_ball/blob/master/springmass-graphics.png "test-springmass-graphics em ação")

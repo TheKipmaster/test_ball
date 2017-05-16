@@ -94,7 +94,7 @@ void Mass::step(double dt)
 // class Spring
 /* ---------------------------------------------------------------- */
 
-Spring::Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiffness, double damping)
+Spring::Spring(Mass* mass1, Mass* mass2, double naturalLength, double stiffness, double damping)
 : mass1(mass1), mass2(mass2),
 naturalLength(naturalLength), stiffness(stiffness), damping(damping)
 { }

@@ -76,16 +76,17 @@ protected:
 class Spring
 {
 public:
-  Spring(Mass * mass1, Mass * mass2, double naturalLength, double stiffness, double damping = 0.01) ;
-  Mass * getMass1() const ;
-  Mass * getMass2() const ;
+  Spring(Mass* mass1, Mass* mass2, double naturalLength, double stiffness, double damping = 0.01) ;
+  Mass* getMass1() const ;
+  Mass* getMass2() const ;
   Vector2 getForce() const ;
   double getLength() const ;
   double getEnergy() const ;
 
 protected:
 /* COMPLETE: TYPE YOUR CODE HERE */
-  Mass *mass1, *mass2;
+  Mass* mass1;
+  Mass* mass2;
   double naturalLength, stiffness, damping;
 
 } ;
