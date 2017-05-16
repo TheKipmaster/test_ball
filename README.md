@@ -1,10 +1,20 @@
-# Bouncing Ball
+# Introdução
 
 O projeto tem como objetivo reforçar conceitos de programação orientada a objeto por meio da implementação de um aplicativo em C++.
 
 Para compilar e rodar o aplicativo corretamente se faz necessária a instalação das bibliotecas "lglut" e "lGL", e o versão de C++ usado é o de 2011.
 
-Esse repositório inclui um arquivo Makefile, afim de facilitar o processo de compilar e recompilar o aplicativo.
+Esse repositório inclui um arquivo Makefile, afim de facilitar o processo de compilar e recompilar o aplicativo. Para compilar qualquer versão do programa, apenas digite "make *nome da versão a ser compilada*".
+
+# Bouncing Ball
+
+Esta parte do projeto simula a trajetória de uma bola.
+
+Para compilar essa versão do programa, basta compilar ball.cpp como arquivo objeto e então test-ball.cpp, linkando o arquivo objeto criado anteriormente. Execute os seguintes comandos no terminal:
+
+1. c++ ball.cpp -std=c++11 -c
+
+2. c++ test-ball.cpp ball.o -std=c++11 -o test-ball
 
 **Arquivos**
 
@@ -57,9 +67,13 @@ Esse repositório inclui um arquivo Makefile, afim de facilitar o processo de co
 
 # Spring-Mass
 
-O Sistema simula a trajetória de um conjunto de massas ligadas por molas
+O Sistema simula a trajetória de um conjunto de massas ligadas por molas.
 
-Para compilar o programa, basta fazer uso do Makefile incluído nesse repositório; digite "make test-springmass" no terminal.
+Para compilar essa versão do programa, basta compilar springmass.cpp como arquivo objeto e então test-springmass.cpp, linkando o arquivo objeto criado anteriormente. Execute os seguintes comandos no terminal:
+
+1. c++ springmass.cpp -std=c++11 -c
+
+2. c++ test-springmass.cpp ball.o -std=c++11 -o test-springmass
 
 **Arquivos**
 
@@ -125,8 +139,7 @@ ordem:
 3. c++ test-springmass-graphics.cpp springmass.o graphics.o -std=c++11 -lglut -lGL -lGLU -o test-springmass-graphics
 
 Para compilar test-ball-graphics, se faz necessária a mesma rotina, exceto trocando a palavra "springmass" por ball sempre que
-ela aparecer. Também pode-se fazer uso do Makefile presente no repositório, digitando simplesmente "make test-ball-graphics" ou
-"make test-springmass-graphics" no terminal.
+ela aparecer.
 
 **Arquivos**
 
