@@ -33,7 +33,7 @@ Para compilar essa versão do programa, basta compilar ball.cpp como arquivo obj
 
 **Diagrama de Classes**
 
-![graph0](https://github.com/TheKipmaster/test_ball/blob/master/Bouncing-Ball-UML.png "Bouncing-Ball-UML")
+![graph0](graphs/Bouncing-Ball-UML.png "Bouncing-Ball-UML")
 
 **Resultados Esperados**
 
@@ -62,7 +62,7 @@ Para compilar essa versão do programa, basta compilar ball.cpp como arquivo obj
 (parte dos resultados foram omitidos)
 
 *Gráfico correspondente:*
-![graph1](https://github.com/TheKipmaster/test_ball/blob/master/results.png "Gráfico 1")
+![graph1](graphs/results.png "Gráfico 1")
 
 
 # Spring-Mass
@@ -92,7 +92,7 @@ Para compilar essa versão do programa, basta compilar springmass.cpp como arqui
 
 **Diagrama de Classes**
 
-![graph2](https://github.com/TheKipmaster/test_ball/blob/master/Spring-Mass-UML.png "Spring-Mass-UML")
+![graph2](graphs/Spring-Mass-UML.png "Spring-Mass-UML")
 
 **Resultados Esperados**
 
@@ -122,7 +122,7 @@ Para compilar essa versão do programa, basta compilar springmass.cpp como arqui
 (formatação alterada para facilitar leitura)
 
 *Gráfico correspondente:*
-![graph3](https://github.com/TheKipmaster/test_ball/blob/master/results2.png "Gráfico 2")
+![graph3](graphs/results2.png "Gráfico 2")
 
 # Graphics
 
@@ -160,10 +160,14 @@ ela aparecer.
 6. graphics.cpp
     * Implementação de métodos declarados em graphics.h
 
+**Diagrama de Classes**
+
+![graph4](graphs/Spring-Mass-UML.png "Spring-Mass-UML")
+
 **Screen Shots**
 
 *test-ball-graphics*
-![graph4](https://github.com/TheKipmaster/test_ball/blob/master/ball-graphics.png "test-ball-graphics em ação")
+![graph5](graphs/ball-graphics.png "test-ball-graphics em ação")
 
 *test-springmass-graphics*
-![graph5](https://github.com/TheKipmaster/test_ball/blob/master/springmass-graphics.png "test-springmass-graphics em ação")
+![graph6](graphs/springmass-graphics.png "test-springmass-graphics em ação")
