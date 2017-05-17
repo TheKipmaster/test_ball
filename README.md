@@ -162,7 +162,7 @@ ela aparecer.
 
 **Diagrama de Classes**
 
-![graph4](graphs/Spring-Mass-UML.png "Spring-Mass-UML")
+![graph4](graphs/Graphics-UML.png "Graphics-UML")
 
 **Screen Shots**
 
